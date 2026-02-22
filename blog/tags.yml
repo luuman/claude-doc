@@ -1,0 +1,24 @@
+claude-code:
+  label: Claude Code
+  permalink: /claude-code
+  description: Claude Code 相关内容
+
+tutorial:
+  label: 教程
+  permalink: /tutorial
+  description: 使用教程和实战案例
+
+automation:
+  label: 自动化
+  permalink: /automation
+  description: 自动化工作流和脚本
+
+parallel:
+  label: 并行开发
+  permalink: /parallel
+  description: 多实例并行开发
+
+productivity:
+  label: 效率提升
+  permalink: /productivity
+  description: 提升开发效率的技巧和工具
