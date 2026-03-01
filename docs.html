@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Claude Code 完全指南 | Claude Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/claude-doc/docs"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Claude Code 完全指南 | Claude Docs"><meta data-rh="true" name="description" content="Anthropic 开发的系统级 AI Agent，集成全功能访问、超大上下文、多代理协作等核心能力的完整使用指南。"><meta data-rh="true" property="og:description" content="Anthropic 开发的系统级 AI Agent，集成全功能访问、超大上下文、多代理协作等核心能力的完整使用指南。"><link data-rh="true" rel="icon" href="/claude-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/claude-doc/docs"><link data-rh="true" rel="alternate" href="https://luuman.github.io/claude-doc/docs" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/claude-doc/docs" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Claude Code 完全指南","item":"https://luuman.github.io/claude-doc/docs/"}]}</script><link rel="alternate" type="application/rss+xml" href="/claude-doc/blog/rss.xml" title="Claude Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/claude-doc/blog/atom.xml" title="Claude Docs Atom Feed"><link rel="stylesheet" href="/claude-doc/assets/css/styles.b961a2e4.css">
+<script src="/claude-doc/assets/js/runtime~main.b2563310.js" defer="defer"></script>
+<script src="/claude-doc/assets/js/main.906b66fd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/claude-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">Claude</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/tauri-doc/docs" class="dropdownMenuItem_VBaP">Tauri</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li><li><a href="https://luuman.github.io/ai-doc/docs" class="dropdownMenuItem_VBaP">AI</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/claude-doc/docs">Docs</a><a class="navLink_RnnM" href="/claude-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/claude-doc/docs"><span title="Claude Code 完全指南" class="linkLabel_WmDU">Claude Code 完全指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/claude-doc/docs/getting-started"><span title="快速开始" class="linkLabel_WmDU">快速开始</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/claude-doc/docs/core-concepts/skills"><span title="核心概念" class="categoryLinkLabel_W154">核心概念</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/skills"><span title="Skills（技能包）" class="linkLabel_WmDU">Skills（技能包）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/hooks"><span title="Hooks（钩子）" class="linkLabel_WmDU">Hooks（钩子）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/plugins"><span title="Plugins（插件）" class="linkLabel_WmDU">Plugins（插件）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/mcp-servers"><span title="MCP Servers（模型上下文协议）" class="linkLabel_WmDU">MCP Servers（模型上下文协议）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/subagents"><span title="Subagents（子代理）" class="linkLabel_WmDU">Subagents（子代理）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/claude-md"><span title="CLAUDE.md（项目记忆文件）" class="linkLabel_WmDU">CLAUDE.md（项目记忆文件）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/core-concepts/memory"><span title="Memory（自动记忆）" class="linkLabel_WmDU">Memory（自动记忆）</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/claude-doc/docs/advanced-features/plan-mode"><span title="高级功能" class="categoryLinkLabel_W154">高级功能</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/plan-mode"><span title="Plan 模式（规划模式）" class="linkLabel_WmDU">Plan 模式（规划模式）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/headless-mode"><span title="Headless 模式（无头模式）" class="linkLabel_WmDU">Headless 模式（无头模式）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/slash-commands"><span title="自定义斜杠命令" class="linkLabel_WmDU">自定义斜杠命令</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/agent-sdk"><span title="Claude Agent SDK" class="linkLabel_WmDU">Claude Agent SDK</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/ide-integration"><span title="IDE 集成" class="linkLabel_WmDU">IDE 集成</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/advanced-features/vibecraft"><span title="VibeCraft — Claude Code 3D 可视化" class="linkLabel_WmDU">VibeCraft — Claude Code 3D 可视化</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/claude-doc/docs/best-practices/workflow"><span title="最佳实践" class="categoryLinkLabel_W154">最佳实践</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/best-practices/workflow"><span title="工作流最佳实践" class="linkLabel_WmDU">工作流最佳实践</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/best-practices/performance"><span title="性能优化" class="linkLabel_WmDU">性能优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/best-practices/security"><span title="安全与故障排查" class="linkLabel_WmDU">安全与故障排查</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/claude-doc/docs/category/真实场景案例库"><span title="真实场景案例库" class="categoryLinkLabel_W154">真实场景案例库</span></a><button aria-label="折叠侧边栏分类 &#x27;真实场景案例库&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases"><span title="真实场景案例库" class="linkLabel_WmDU">真实场景案例库</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/frontend-acceleration"><span title="React 项目加速" class="linkLabel_WmDU">React 项目加速</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/ui-components"><span title="UI 组件库自动化" class="linkLabel_WmDU">UI 组件库自动化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/backend-api"><span title="API 快速开发" class="linkLabel_WmDU">API 快速开发</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/database-migration"><span title="数据库迁移和优化" class="linkLabel_WmDU">数据库迁移和优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/cicd-automation"><span title="CI/CD 流程自动化" class="linkLabel_WmDU">CI/CD 流程自动化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/infrastructure-as-code"><span title="基础设施即代码（IaC）" class="linkLabel_WmDU">基础设施即代码（IaC）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/api-documentation"><span title="API 文档自动化" class="linkLabel_WmDU">API 文档自动化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/technical-writing"><span title="技术文档写作" class="linkLabel_WmDU">技术文档写作</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/code-review"><span title="代码审查自动化" class="linkLabel_WmDU">代码审查自动化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/claude-doc/docs/use-cases/knowledge-base"><span title="知识库维护" class="linkLabel_WmDU">知识库维护</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/claude-doc/docs/quick-reference"><span title="速查手册" class="linkLabel_WmDU">速查手册</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/claude-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Claude Code 完全指南</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Claude Code 完全指南</h1></header>
+<p>Claude Code 是由 Anthropic 开发的<strong>系统级 AI Agent</strong>，它不只是一个代码补全工具，而是一个能够深度介入你开发流程的智能协作者。</p>
+<p><strong>核心价值：</strong> 将重复性开发工作自动化，让你专注于高价值的架构和创意工作，显著提升团队开发效率。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-3-分钟了解核心价值">⚡ 3 分钟了解核心价值<a href="#-3-分钟了解核心价值" class="hash-link" aria-label="⚡ 3 分钟了解核心价值的直接链接" title="⚡ 3 分钟了解核心价值的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="你能做什么">你能做什么<a href="#你能做什么" class="hash-link" aria-label="你能做什么的直接链接" title="你能做什么的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">🤖 <strong>全自动任务执行</strong> — 直接读写文件、执行命令、调用工具，像一个真正的开发者一样工作</li>
+<li class="">🧠 <strong>超大上下文理解</strong> — 200K token 容量，能理解整个项目的上下文，不会丢失信息</li>
+<li class="">🔗 <strong>无缝工具集成</strong> — 接入数据库、API、Git、CI/CD，扩展无限</li>
+<li class="">👥 <strong>多代理协作</strong> — 并行派发任务给多个子代理，处理大型复杂工程</li>
+<li class="">📝 <strong>纯自然语言驱动</strong> — 直接描述需求，系统自动规划步骤并执行</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="典型效益对比">典型效益对比<a href="#典型效益对比" class="hash-link" aria-label="典型效益对比的直接链接" title="典型效益对比的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>场景</th><th>传统方式</th><th>使用 Claude Code</th><th>效率提升</th></tr></thead><tbody><tr><td>生成 50 个测试用例</td><td>2-3 小时手写</td><td>10 分钟</td><td><strong>10-15x</strong></td></tr><tr><td>大型代码库重构</td><td>数天多人并行</td><td>数小时</td><td><strong>5-10x</strong></td></tr><tr><td>API 文档自动化</td><td>1-2 天手写维护</td><td>实时自动生成</td><td><strong>自动化</strong></td></tr><tr><td>代码审查（大 PR）</td><td>1-2 小时手动审</td><td>15 分钟并行审</td><td><strong>4-8x</strong></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-选择你的学习路线">🎯 选择你的学习路线<a href="#-选择你的学习路线" class="hash-link" aria-label="🎯 选择你的学习路线的直接链接" title="🎯 选择你的学习路线的直接链接" translate="no">​</a></h2>
+<p>根据你的角色和目标，选择合适的学习路线，快速获得实际价值。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-我是新手--5-分钟快速体验">👶 我是新手 — 5 分钟快速体验<a href="#-我是新手--5-分钟快速体验" class="hash-link" aria-label="👶 我是新手 — 5 分钟快速体验的直接链接" title="👶 我是新手 — 5 分钟快速体验的直接链接" translate="no">​</a></h3>
+<p>如果你想快速了解 Claude Code 能做什么：</p>
+<ol>
+<li class=""><strong><a class="" href="/claude-doc/docs/getting-started">快速开始</a></strong> — 5 分钟安装配置</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/getting-started#%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F">第一个命令</a></strong> — 试试交互模式</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/use-cases/frontend-acceleration">真实场景案例</a></strong> — 看具体例子</li>
+<li class="">然后选择相关的核心概念深入学习</li>
+</ol>
+<p><strong>时间投入：</strong> 约 30 分钟理解基础</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-我是开发者--2-小时掌握核心能力">💻 我是开发者 — 2 小时掌握核心能力<a href="#-我是开发者--2-小时掌握核心能力" class="hash-link" aria-label="💻 我是开发者 — 2 小时掌握核心能力的直接链接" title="💻 我是开发者 — 2 小时掌握核心能力的直接链接" translate="no">​</a></h3>
+<p>如果你想将 Claude Code 集成到日常工作流中：</p>
+<p><strong>第一步：快速启动（20 分钟）</strong></p>
+<ul>
+<li class=""><a class="" href="/claude-doc/docs/getting-started">快速开始</a> — 安装、配置、启动</li>
+</ul>
+<p><strong>第二步：核心概念（80 分钟）</strong></p>
+<ul>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/skills">Skills 斜杠命令</a> — 自动化常用任务</li>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/hooks">Hooks 生命周期</a> — 自定义工作流</li>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/mcp-servers">MCP Servers</a> — 接入外部工具</li>
+</ul>
+<p><strong>第三步：实战应用（20 分钟）</strong></p>
+<ul>
+<li class="">选择你的工作场景（前端？后端？DevOps？）</li>
+<li class="">查看对应的<a class="" href="/claude-doc/use-cases">真实场景案例</a></li>
+<li class="">开始实践</li>
+</ul>
+<p><strong>时间投入：</strong> 约 2 小时</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-我是架构师--团队级别的深度定制">🏗️ 我是架构师 — 团队级别的深度定制<a href="#️-我是架构师--团队级别的深度定制" class="hash-link" aria-label="🏗️ 我是架构师 — 团队级别的深度定制的直接链接" title="🏗️ 我是架构师 — 团队级别的深度定制的直接链接" translate="no">​</a></h3>
+<p>如果你想为团队构建统一的开发工作流：</p>
+<p><strong>第一步：理解架构（30 分钟）</strong></p>
+<ul>
+<li class=""><a class="" href="/claude-doc/core-concepts">Core Concepts</a> — 5 个扩展机制详解</li>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/subagents">Subagents 多代理协作</a> — 大型任务并行处理</li>
+</ul>
+<p><strong>第二步：团队最佳实践（60 分钟）</strong></p>
+<ul>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/claude-md">CLAUDE.md 项目配置</a> — 团队知识共享</li>
+<li class=""><a class="" href="/claude-doc/docs/best-practices/workflow">最佳实践 - 工作流</a></li>
+<li class=""><a class="" href="/claude-doc/docs/best-practices/security">最佳实践 - 安全与权限</a></li>
+</ul>
+<p><strong>第三步：构建定制方案（90 分钟）</strong></p>
+<ul>
+<li class=""><a class="" href="/claude-doc/docs/advanced-features/slash-commands">Skills 编写指南</a> — 自定义命令</li>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/plugins">Plugins 开发</a> — 团队插件库</li>
+<li class=""><a class="" href="/claude-doc/docs/core-concepts/mcp-servers">MCP Servers</a> — 企业工具集成</li>
+</ul>
+<p><strong>时间投入：</strong> 约 3 小时</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-按场景快速查找">📚 按场景快速查找<a href="#-按场景快速查找" class="hash-link" aria-label="📚 按场景快速查找的直接链接" title="📚 按场景快速查找的直接链接" translate="no">​</a></h2>
+<p>找不到你需要的？按工作场景快速定位：</p>
+<ul>
+<li class=""><strong>🎨 前端开发</strong> — <a class="" href="/claude-doc/use-cases">加速 React/Vue 项目</a> | <a class="" href="/claude-doc/use-cases">UI 组件自动化</a></li>
+<li class=""><strong>⚙️ 后端服务</strong> — <a class="" href="/claude-doc/use-cases">API 开发自动化</a> | <a class="" href="/claude-doc/use-cases">数据库迁移</a></li>
+<li class=""><strong>🔧 DevOps/运维</strong> — <a class="" href="/claude-doc/use-cases">CI/CD 集成</a> | <a class="" href="/claude-doc/use-cases">基础设施即代码</a></li>
+<li class=""><strong>📖 文档/内容</strong> — <a class="" href="/claude-doc/use-cases">自动化文档生成</a> | <a class="" href="/claude-doc/use-cases">内容批量处理</a></li>
+<li class=""><strong>👥 团队协作</strong> — <a class="" href="/claude-doc/use-cases">代码审查自动化</a> | <a class="" href="/claude-doc/docs/best-practices/workflow">知识共享</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-核心特性一览">🔧 核心特性一览<a href="#-核心特性一览" class="hash-link" aria-label="🔧 核心特性一览的直接链接" title="🔧 核心特性一览的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="全功能系统访问">全功能系统访问<a href="#全功能系统访问" class="hash-link" aria-label="全功能系统访问的直接链接" title="全功能系统访问的直接链接" translate="no">​</a></h3>
+<p>Claude Code 拥有对本地系统的完整访问权限，可以直接操作文件系统、执行 Shell 命令、调用 CLI 工具，无需中间层转发。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="200k-token-超大上下文">200K Token 超大上下文<a href="#200k-token-超大上下文" class="hash-link" aria-label="200K Token 超大上下文的直接链接" title="200K Token 超大上下文的直接链接" translate="no">​</a></h3>
+<p>单次会话支持高达 200,000 token 的上下文窗口，足以容纳整个中型项目的核心代码、完整的架构文档与需求规格、跨文件的复杂依赖关系分析。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="高度可扩展性">高度可扩展性<a href="#高度可扩展性" class="hash-link" aria-label="高度可扩展性的直接链接" title="高度可扩展性的直接链接" translate="no">​</a></h3>
+<p>通过 5 种扩展机制适配任意技术栈和工作流：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>机制</th><th>作用</th><th>用途</th></tr></thead><tbody><tr><td><strong>Skills</strong></td><td>自定义斜杠命令</td><td>封装常用工作流，提供快捷操作</td></tr><tr><td><strong>Hooks</strong></td><td>生命周期钩子</td><td>在代理执行前后注入自定义逻辑</td></tr><tr><td><strong>Plugins</strong></td><td>可复用模块</td><td>团队共享功能库</td></tr><tr><td><strong>MCP Servers</strong></td><td>外部资源集成</td><td>接入数据库、API、文档库等</td></tr><tr><td><strong>Subagents</strong></td><td>多代理架构</td><td>并行任务分发，处理大型工程</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多代理协作">多代理协作<a href="#多代理协作" class="hash-link" aria-label="多代理协作的直接链接" title="多代理协作的直接链接" translate="no">​</a></h3>
+<p>支持 Orchestrator-Subagent 架构，将复杂任务并行派发给多个子代理执行，最后汇总结果。特别适合大型代码库分析、多模块重构、跨服务测试生成。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-能力清单">✅ 能力清单<a href="#-能力清单" class="hash-link" aria-label="✅ 能力清单的直接链接" title="✅ 能力清单的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="擅长的任务">擅长的任务<a href="#擅长的任务" class="hash-link" aria-label="擅长的任务的直接链接" title="擅长的任务的直接链接" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 读取、编写、重构任意格式的文件</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 执行 Shell 命令并分析输出结果</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 跨多个文件追踪复杂依赖关系</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 理解并生成中文注释与文档</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 自动化重复性开发任务（生成测试、格式化、迁移脚本）</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 结合 MCP 访问数据库、API、浏览器等外部资源</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 通过 Subagents 并行处理大型任务</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 在会话中持续追踪上下文，无需反复说明背景</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="需要注意的边界">需要注意的边界<a href="#需要注意的边界" class="hash-link" aria-label="需要注意的边界的直接链接" title="需要注意的边界的直接链接" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> 不会主动推送到远程仓库（除非你明确要求）</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 危险操作（删除文件、覆盖数据）会默认请求确认</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 网络访问能力取决于 MCP Server 的配置</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 对话上下文不跨会话持久化（依赖 CLAUDE.md 传递项目知识）</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-完整文档结构">📖 完整文档结构<a href="#-完整文档结构" class="hash-link" aria-label="📖 完整文档结构的直接链接" title="📖 完整文档结构的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="入门篇">入门篇<a href="#入门篇" class="hash-link" aria-label="入门篇的直接链接" title="入门篇的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong><a class="" href="/claude-doc/docs/getting-started">快速开始</a></strong> — 安装、配置、启动（5 分钟）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="核心概念篇">核心概念篇<a href="#核心概念篇" class="hash-link" aria-label="核心概念篇的直接链接" title="核心概念篇的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/skills">Skills</a></strong> — 自定义斜杠命令，自动化工作流</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/hooks">Hooks</a></strong> — 生命周期事件注入</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/mcp-servers">MCP Servers</a></strong> — 外部工具集成</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/plugins">Plugins</a></strong> — 可复用功能模块</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/subagents">Subagents</a></strong> — 多代理协作架构</li>
+<li class=""><strong><a class="" href="/claude-doc/docs/core-concepts/claude-md">CLAUDE.md</a></strong> — 项目配置文件</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="进阶篇">进阶篇<a href="#进阶篇" class="hash-link" aria-label="进阶篇的直接链接" title="进阶篇的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong><a class="" href="/claude-doc/advanced-features">高级特性</a></strong> — IDE 集成、斜杠命令、Plan Mode 等</li>
+<li class=""><strong><a class="" href="/claude-doc/best-practices">最佳实践</a></strong> — 工作流、安全、性能优化</li>
+<li class=""><strong><a class="" href="/claude-doc/use-cases">真实场景案例</a></strong> — 前端、后端、DevOps 实战指南</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="快速参考">快速参考<a href="#快速参考" class="hash-link" aria-label="快速参考的直接链接" title="快速参考的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong><a class="" href="/claude-doc/docs/quick-reference">快速参考</a></strong> — 斜杠命令速查、常见问题、故障排除</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-立即开始">🚀 立即开始<a href="#-立即开始" class="hash-link" aria-label="🚀 立即开始的直接链接" title="🚀 立即开始的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">👶 <strong>新手？</strong> <a class="" href="/claude-doc/docs/getting-started">5 分钟快速开始</a></li>
+<li class="">💻 <strong>开发者？</strong> <a class="" href="/claude-doc/core-concepts">2 小时核心概念学习</a></li>
+<li class="">🏗️ <strong>架构师？</strong> <a class="" href="/claude-doc/core-concepts">团队深度定制指南</a></li>
+<li class="">📋 <strong>快速查找？</strong> <a href="#%E6%8C%89%E5%9C%BA%E6%99%AF%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE" class="">按场景查询</a></li>
+</ul>
+<hr>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>模型选择</div><div class="admonitionContent_BuS1"><p>Claude Code 支持接入多种模型，包括 Anthropic 官方模型和国内主流大模型（GLM、Kimi、DeepSeek、通义千问）。国内用户无需科学上网即可完整使用所有功能，具体配置见 <a class="" href="/claude-doc/docs/getting-started#%E6%A8%A1%E5%9E%8B%E9%85%8D%E7%BD%AE">快速开始 - 模型配置</a> 章节。</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--next" href="/claude-doc/docs/getting-started"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">快速开始</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-3-分钟了解核心价值" class="table-of-contents__link toc-highlight">⚡ 3 分钟了解核心价值</a><ul><li><a href="#你能做什么" class="table-of-contents__link toc-highlight">你能做什么</a></li><li><a href="#典型效益对比" class="table-of-contents__link toc-highlight">典型效益对比</a></li></ul></li><li><a href="#-选择你的学习路线" class="table-of-contents__link toc-highlight">🎯 选择你的学习路线</a><ul><li><a href="#-我是新手--5-分钟快速体验" class="table-of-contents__link toc-highlight">👶 我是新手 — 5 分钟快速体验</a></li><li><a href="#-我是开发者--2-小时掌握核心能力" class="table-of-contents__link toc-highlight">💻 我是开发者 — 2 小时掌握核心能力</a></li><li><a href="#️-我是架构师--团队级别的深度定制" class="table-of-contents__link toc-highlight">🏗️ 我是架构师 — 团队级别的深度定制</a></li></ul></li><li><a href="#-按场景快速查找" class="table-of-contents__link toc-highlight">📚 按场景快速查找</a></li><li><a href="#-核心特性一览" class="table-of-contents__link toc-highlight">🔧 核心特性一览</a><ul><li><a href="#全功能系统访问" class="table-of-contents__link toc-highlight">全功能系统访问</a></li><li><a href="#200k-token-超大上下文" class="table-of-contents__link toc-highlight">200K Token 超大上下文</a></li><li><a href="#高度可扩展性" class="table-of-contents__link toc-highlight">高度可扩展性</a></li><li><a href="#多代理协作" class="table-of-contents__link toc-highlight">多代理协作</a></li></ul></li><li><a href="#-能力清单" class="table-of-contents__link toc-highlight">✅ 能力清单</a><ul><li><a href="#擅长的任务" class="table-of-contents__link toc-highlight">擅长的任务</a></li><li><a href="#需要注意的边界" class="table-of-contents__link toc-highlight">需要注意的边界</a></li></ul></li><li><a href="#-完整文档结构" class="table-of-contents__link toc-highlight">📖 完整文档结构</a><ul><li><a href="#入门篇" class="table-of-contents__link toc-highlight">入门篇</a></li><li><a href="#核心概念篇" class="table-of-contents__link toc-highlight">核心概念篇</a></li><li><a href="#进阶篇" class="table-of-contents__link toc-highlight">进阶篇</a></li><li><a href="#快速参考" class="table-of-contents__link toc-highlight">快速参考</a></li></ul></li><li><a href="#-立即开始" class="table-of-contents__link toc-highlight">🚀 立即开始</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Claude Docs.</div></div></div></footer></div>
+</body>
+</html>

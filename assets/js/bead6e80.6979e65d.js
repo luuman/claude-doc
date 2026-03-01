@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs_workspace=globalThis.webpackChunkdocs_workspace||[]).push([[5812],{6536(e){e.exports=JSON.parse('{"authors":[{"name":"Claude Code \u56e2\u961f","title":"Anthropic \u51fa\u54c1","url":"https://claude.ai/code","imageURL":"https://github.com/anthropics.png","key":"claude-team","page":null,"count":8}]}')}}]);
