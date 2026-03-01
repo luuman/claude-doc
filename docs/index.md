@@ -1,266 +1,196 @@
 ---
-slug: /
-description: >-
-  Brainboard is an end-to-end solution to visually build & manage cloud
-  infrastructures, collaboratively.
-icon: hand-wave
-cover: .gitbook/assets/Brainboard Onboarding Training.webp
-coverY: 16.86990291262136
-sidebar_class_name: sidebar-item-icon icon-hand-wave
+title: Claude Code 完全指南
+sidebar_position: 1
+description: Anthropic 开发的系统级 AI Agent，集成全功能访问、超大上下文、多代理协作等核心能力的完整使用指南。
 ---
-# 欢迎使用 `Arya` 在线 Markdown 编辑器
 
-[Arya](https://markdown.lovejade.cn/?ref=markdown.lovejade.cn)，是一款基于 `Vue`、`Vditor`，为未来而构建的在线 Markdown 编辑器；轻量且强大：内置粘贴 HTML 自动转换为 Markdown，支持流程图、甘特图、时序图、任务列表，可导出携带样式的图片、PDF、微信公众号特制的 HTML 等等。
+# Claude Code 完全指南
+
+Claude Code 是由 Anthropic 开发的**系统级 AI Agent**，它不只是一个代码补全工具，而是一个能够深度介入你开发流程的智能协作者。
+
+**核心价值：** 将重复性开发工作自动化，让你专注于高价值的架构和创意工作，显著提升团队开发效率。
 
 ---
 
-## 如何使用
+## ⚡ 3 分钟了解核心价值
 
-**微注**：清空目前这份默认文档，即处于可使用态。[Arya](https://markdown.lovejade.cn/?ref=markdown.lovejade.cn) 另一大优点在于：编辑内容只会在您本地进行保存，不会上传您的数据至服务器，**绝不窥测用户个人隐私，可放心使用**；Github 源码：[markdown-online-editor](https://github.com/nicejade/markdown-online-editor)，部分功能仍在开发🚧，敬请期待。
+### 你能做什么
 
-默认为[所见即所得](https://hacpai.com/article/1577370404903?ref=github.com)模式，可通过 `⌘-⇧-M`（`Ctrl-⇧-M`）进行切换；或通过以下方式：
+- 🤖 **全自动任务执行** — 直接读写文件、执行命令、调用工具，像一个真正的开发者一样工作
+- 🧠 **超大上下文理解** — 200K token 容量，能理解整个项目的上下文，不会丢失信息
+- 🔗 **无缝工具集成** — 接入数据库、API、Git、CI/CD，扩展无限
+- 👥 **多代理协作** — 并行派发任务给多个子代理，处理大型复杂工程
+- 📝 **纯自然语言驱动** — 直接描述需求，系统自动规划步骤并执行
 
-- 所见即所得：`⌘-⌥-7`（`Ctrl-alt-7`）；
-- 即时渲染：`⌘-⌥-8`（`Ctrl-alt-8`）；
-- 分屏渲染：`⌘-⌥-9`（`Ctrl-alt-9`）；
+### 典型效益对比
 
-### PPT 预览
-
-如果您用作 `PPT` 预览（入口在`设置`中），需要注意，这里暂还不能支持各种图表的渲染；您可以使用 `---` 来定义水平方向上幻灯片，用 `--` 来定义垂直幻灯片；更多设定可以参见 [RevealJs 文档](https://github.com/hakimel/reveal.js#table-of-contents)。
-
----
-
-## 什么是 Markdown
-
-`Markdown` 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号，以最小的输入代价，生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体**、*斜体* 或者[超文本链接](https://vue-cli3.lovejade.cn/explore/)，更棒的是，它还可以：
-
----
-
-### 1. 制作待办事宜 `Todo` 列表
-
-- [x] 🎉 通常 `Markdown` 解析器自带的基本功能；
-- [x] 🍀 支持**流程图**、**甘特图**、**时序图**、**任务列表**；
-- [x] 🏁 支持粘贴 HTML 自动转换为 Markdown；
-- [x] 💃🏻 支持插入原生 Emoji、设置常用表情列表；
-- [x] 🚑 支持编辑内容保存**本地存储**，防止意外丢失；
-- [x] 📝 支持**实时预览**，主窗口大小拖拽，字符计数；
-- [x] 🛠 支持常用快捷键(**Tab**)，及代码块添加复制
-- [x] ✨ 支持**导出**携带样式的 PDF、PNG、JPEG 等；
-- [x] ✨ 升级 Vditor，新增对 `echarts` 图表的支持；
-- [x] 👏 支持检查并格式化 Markdown 语法，使其专业；
-- [x] 🦑 支持五线谱、及[部分站点、视频、音频解析](https://github.com/b3log/vditor/issues/117?ref=hacpai.com#issuecomment-526986052)；
-- [x] 🌟 增加对**所见即所得**编辑模式的支持(`⌘-⇧-M`)；
+| 场景 | 传统方式 | 使用 Claude Code | 效率提升 |
+|------|---------|-----------------|--------|
+| 生成 50 个测试用例 | 2-3 小时手写 | 10 分钟 | **10-15x** |
+| 大型代码库重构 | 数天多人并行 | 数小时 | **5-10x** |
+| API 文档自动化 | 1-2 天手写维护 | 实时自动生成 | **自动化** |
+| 代码审查（大 PR） | 1-2 小时手动审 | 15 分钟并行审 | **4-8x** |
 
 ---
 
-### 2. 书写一个质能守恒公式[^LaTeX]
+## 🎯 选择你的学习路线
 
-$$
-E=mc^2
-$$
+根据你的角色和目标，选择合适的学习路线，快速获得实际价值。
 
----
+### 👶 我是新手 — 5 分钟快速体验
 
-### 3. 高亮一段代码[^code]
+如果你想快速了解 Claude Code 能做什么：
 
-```js title="docusaurus.config.mjs"
-// 给页面里所有的 DOM 元素添加一个 1px 的描边（outline）;
-[].forEach.call($$("*"),function(a){
-  a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16);
-})
-```
+1. **[快速开始](./getting-started.md)** — 5 分钟安装配置
+2. **[第一个命令](./getting-started.md#启动方式)** — 试试交互模式
+3. **[真实场景案例](./use-cases/frontend-acceleration.md)** — 看具体例子
+4. 然后选择相关的核心概念深入学习
+
+**时间投入：** 约 30 分钟理解基础
 
 ---
 
-### 4. 高效绘制[流程图](https://github.com/knsv/mermaid#flowchart)
+### 💻 我是开发者 — 2 小时掌握核心能力
 
-```mermaid
----
-config:
-  look: handDrawn
-  theme: dark
----
-graph TD
-    A[用户请求] --> B[语义解析]
-    B --> C[RAG检索]
-    
-    C -->|✅ 知识库匹配| D[上下文增强]
-    C -->|❌ 无匹配| E[任务分解]
-    
-    D --> E
-    
-    E --> F{工具选择}
-    
-    F -->|🛠️ 核心工具| G{基础操作}
-    F -->|🔌 MCP扩展服务| H{MCP操作}
-    
-    G -->|✏️ 文件操作| I[读写/替换]
-    G -->|🖥️ 系统命令执行| J[执行命令]
-    G -->|🔍 代码分析| K[代码分析]
-    
-    H -->|⚙️ 使用MCP工具| L[使用MCP工具]
-    H -->|📦 访问MCP资源| M[访问MCP资源]
-    
-    I --> N[结果验证]
-    J --> N
-    K --> N
-    L --> N
-    M --> N
-    
-    N --> O{完成判断}
-    
-    O -->|✅| P[提交最终结果]
-    O -->|❌| E
-```
+如果你想将 Claude Code 集成到日常工作流中：
+
+**第一步：快速启动（20 分钟）**
+- [快速开始](./getting-started.md) — 安装、配置、启动
+
+**第二步：核心概念（80 分钟）**
+- [Skills 斜杠命令](./core-concepts/skills.md) — 自动化常用任务
+- [Hooks 生命周期](./core-concepts/hooks.md) — 自定义工作流
+- [MCP Servers](./core-concepts/mcp-servers.md) — 接入外部工具
+
+**第三步：实战应用（20 分钟）**
+- 选择你的工作场景（前端？后端？DevOps？）
+- 查看对应的[真实场景案例](./use-cases/)
+- 开始实践
+
+**时间投入：** 约 2 小时
 
 ---
 
-### 5. 高效绘制[序列图](https://github.com/knsv/mermaid#sequence-diagram)
+### 🏗️ 我是架构师 — 团队级别的深度定制
 
-```mermaid
----
-config:
-  look: handDrawn
-  theme: dark
----
-sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice->John: Hello John, how are you?
-  loop Healthcheck
-      John->John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts <br/>prevail...
-  John-->Alice: Great!
-  John->Bob: How about you?
-  Bob-->John: Jolly good!
-```
+如果你想为团队构建统一的开发工作流：
 
----
+**第一步：理解架构（30 分钟）**
+- [Core Concepts](./core-concepts/) — 5 个扩展机制详解
+- [Subagents 多代理协作](./core-concepts/subagents.md) — 大型任务并行处理
 
-### 6. 高效绘制[甘特图](https://github.com/knsv/mermaid#gantt-diagram)
+**第二步：团队最佳实践（60 分钟）**
+- [CLAUDE.md 项目配置](./core-concepts/claude-md.md) — 团队知识共享
+- [最佳实践 - 工作流](./best-practices/workflow.md)
+- [最佳实践 - 安全与权限](./best-practices/security.md)
 
-> **甘特图**内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。
+**第三步：构建定制方案（90 分钟）**
+- [Skills 编写指南](./advanced-features/slash-commands.md) — 自定义命令
+- [Plugins 开发](./core-concepts/plugins.md) — 团队插件库
+- [MCP Servers](./core-concepts/mcp-servers.md) — 企业工具集成
 
-```mermaid
----
-config:
-  look: handDrawn
-  theme: dark
----
-gantt
-  title 项目开发流程
-  section 项目确定
-    需求分析       :a1, 2019-06-22, 3d
-    可行性报告     :after a1, 5d
-    概念验证       : 5d
-  section 项目实施
-    概要设计      :2019-07-05  , 5d
-    详细设计      :2019-07-08, 10d
-    编码          :2019-07-15, 10d
-    测试          :2019-07-22, 5d
-  section 发布验收
-    发布: 2d
-    验收: 3d
-```
-
-### 7. 支持图表
-
-```echarts
-{
-  "backgroundColor": "#212121",
-  "title": {
-    "text": "「晚晴幽草轩」访问来源",
-    "subtext": "2019 年 6 月份",
-    "x": "center",
-    "textStyle": {
-      "color": "#f2f2f2"
-    }
-  },
-  "tooltip": {
-    "trigger": "item",
-    "formatter": "{a} <br/>{b} : {c} ({d}%)"
-  },
-  "legend": {
-    "orient": "vertical",
-    "left": "left",
-    "data": [
-      "搜索引擎",
-      "直接访问",
-      "推荐",
-      "其他",
-      "社交平台"
-    ],
-    "textStyle": {
-      "color": "#f2f2f2"
-    }
-  },
-  "series": [
-    {
-      "name": "访问来源",
-      "type": "pie",
-      "radius": "55%",
-      "center": [
-        "50%",
-        "60%"
-      ],
-      "data": [
-        {
-          "value": 10440,
-          "name": "搜索引擎",
-          "itemStyle": {
-            "color": "#ef4136"
-          }
-        },
-        {
-          "value": 4770,
-          "name": "直接访问"
-        },
-        {
-          "value": 2430,
-          "name": "推荐"
-        },
-        {
-          "value": 342,
-          "name": "其他"
-        },
-        {
-          "value": 18,
-          "name": "社交平台"
-        }
-      ],
-      "itemStyle": {
-        "emphasis": {
-          "shadowBlur": 10,
-          "shadowOffsetX": 0,
-          "shadowColor": "rgba(0, 0, 0, 0.5)"
-        }
-      }
-    }
-  ]
-}
-```
-
-> **备注**：上述 echarts 图表📈，其数据，须使用严格的 **JSON** 格式；您可使用 JSON.stringify(data)，将对象传换从而得标准数据，即可正常使用。
+**时间投入：** 约 3 小时
 
 ---
 
-### 8. 绘制表格
+## 📚 按场景快速查找
 
-| 作品名称        | 在线地址   |  上线日期  |
-| :--------  | :-----  | :----:  |
-| 逍遥自在轩 | [https://www.niceshare.site](https://www.niceshare.site/?ref=markdown.lovejade.cn) |2024-04-26|
-| 玉桃文飨轩 | [https://share.lovejade.cn](https://share.lovejade.cn/?ref=markdown.lovejade.cn) |2022-08-26|
-| 缘知随心庭 | [https://fine.niceshare.site](https://fine.niceshare.site/?ref=markdown.lovejade.cn) |2022-02-26|
-| 静轩之别苑 | [http://quickapp.lovejade.cn](http://quickapp.lovejade.cn/?ref=markdown.lovejade.cn) |2019-01-12|
-| 晚晴幽草轩 | [https://www.jeffjade.com](https://www.jeffjade.com/?ref=markdown.lovejade.cn) |2014-09-20|
+找不到你需要的？按工作场景快速定位：
+
+- **🎨 前端开发** — [加速 React/Vue 项目](./use-cases/) | [UI 组件自动化](./use-cases/)
+- **⚙️ 后端服务** — [API 开发自动化](./use-cases/) | [数据库迁移](./use-cases/)
+- **🔧 DevOps/运维** — [CI/CD 集成](./use-cases/) | [基础设施即代码](./use-cases/)
+- **📖 文档/内容** — [自动化文档生成](./use-cases/) | [内容批量处理](./use-cases/)
+- **👥 团队协作** — [代码审查自动化](./use-cases/) | [知识共享](./best-practices/workflow.md)
 
 ---
 
-### 9. 更详细语法说明
+## 🔧 核心特性一览
 
-想要查看更详细的语法说明，可以参考这份 [Markdown 资源列表](https://github.com/nicejade/nice-front-end-tutorial/blob/master/tutorial/markdown-tutorial.md)，涵盖入门至进阶教程，以及资源、平台等信息，能让您对她有更深的认知。
+### 全功能系统访问
 
-总而言之，不同于其它**所见即所得**的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。**Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。** 目前它已经成为世界上最大的技术分享网站 `GitHub` 和 技术问答网站 `StackOverFlow` 的御用书写格式，而且越发流行，正在在向各行业渗透。
+Claude Code 拥有对本地系统的完整访问权限，可以直接操作文件系统、执行 Shell 命令、调用 CLI 工具，无需中间层转发。
 
-最新更新于 2025.04.16
+### 200K Token 超大上下文
+
+单次会话支持高达 200,000 token 的上下文窗口，足以容纳整个中型项目的核心代码、完整的架构文档与需求规格、跨文件的复杂依赖关系分析。
+
+### 高度可扩展性
+
+通过 5 种扩展机制适配任意技术栈和工作流：
+
+| 机制 | 作用 | 用途 |
+|------|------|------|
+| **Skills** | 自定义斜杠命令 | 封装常用工作流，提供快捷操作 |
+| **Hooks** | 生命周期钩子 | 在代理执行前后注入自定义逻辑 |
+| **Plugins** | 可复用模块 | 团队共享功能库 |
+| **MCP Servers** | 外部资源集成 | 接入数据库、API、文档库等 |
+| **Subagents** | 多代理架构 | 并行任务分发，处理大型工程 |
+
+### 多代理协作
+
+支持 Orchestrator-Subagent 架构，将复杂任务并行派发给多个子代理执行，最后汇总结果。特别适合大型代码库分析、多模块重构、跨服务测试生成。
+
+---
+
+## ✅ 能力清单
+
+### 擅长的任务
+
+- [x] 读取、编写、重构任意格式的文件
+- [x] 执行 Shell 命令并分析输出结果
+- [x] 跨多个文件追踪复杂依赖关系
+- [x] 理解并生成中文注释与文档
+- [x] 自动化重复性开发任务（生成测试、格式化、迁移脚本）
+- [x] 结合 MCP 访问数据库、API、浏览器等外部资源
+- [x] 通过 Subagents 并行处理大型任务
+- [x] 在会话中持续追踪上下文，无需反复说明背景
+
+### 需要注意的边界
+
+- [ ] 不会主动推送到远程仓库（除非你明确要求）
+- [ ] 危险操作（删除文件、覆盖数据）会默认请求确认
+- [ ] 网络访问能力取决于 MCP Server 的配置
+- [ ] 对话上下文不跨会话持久化（依赖 CLAUDE.md 传递项目知识）
+
+---
+
+## 📖 完整文档结构
+
+### 入门篇
+
+- **[快速开始](./getting-started.md)** — 安装、配置、启动（5 分钟）
+
+### 核心概念篇
+
+- **[Skills](./core-concepts/skills.md)** — 自定义斜杠命令，自动化工作流
+- **[Hooks](./core-concepts/hooks.md)** — 生命周期事件注入
+- **[MCP Servers](./core-concepts/mcp-servers.md)** — 外部工具集成
+- **[Plugins](./core-concepts/plugins.md)** — 可复用功能模块
+- **[Subagents](./core-concepts/subagents.md)** — 多代理协作架构
+- **[CLAUDE.md](./core-concepts/claude-md.md)** — 项目配置文件
+
+### 进阶篇
+
+- **[高级特性](./advanced-features/)** — IDE 集成、斜杠命令、Plan Mode 等
+- **[最佳实践](./best-practices/)** — 工作流、安全、性能优化
+- **[真实场景案例](./use-cases/)** — 前端、后端、DevOps 实战指南
+
+### 快速参考
+
+- **[快速参考](./quick-reference.md)** — 斜杠命令速查、常见问题、故障排除
+
+---
+
+## 🚀 立即开始
+
+- 👶 **新手？** [5 分钟快速开始](./getting-started.md)
+- 💻 **开发者？** [2 小时核心概念学习](./core-concepts/)
+- 🏗️ **架构师？** [团队深度定制指南](./core-concepts/)
+- 📋 **快速查找？** [按场景查询](#按场景快速查找)
+
+---
+
+:::info 模型选择
+Claude Code 支持接入多种模型，包括 Anthropic 官方模型和国内主流大模型（GLM、Kimi、DeepSeek、通义千问）。国内用户无需科学上网即可完整使用所有功能，具体配置见 [快速开始 - 模型配置](./getting-started.md#模型配置) 章节。
+:::
